@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Captcha</title>
+    <title>Cloudflare Captcha</title>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         body {
@@ -14,39 +14,21 @@
             margin: 0;
             background-color: #f4f4f4;
         }
-        form {
-            text-align: center;
+        .captcha-container {
             padding: 20px;
-            background-color: white;
+            background-color: white; /* White background for the container */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
         .cf-turnstile {
-            background-color: white; 
+            background-color: white; /* Try setting background color for the CAPTCHA box */
+            border-radius: 8px; /* Optional: make the CAPTCHA box corners rounded */
         }
     </style>
 </head>
 <body>
-    <form id="captcha-form" action="/submit" method="POST">
+    <div class="captcha-container">
         <div class="cf-turnstile" data-sitekey="0x4AAAAAABCdr4JPigHJ3giU"></div>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        document.getElementById("captcha-form").addEventListener("submit", function(event) {
-            const captchaResponse = document.querySelector('.cf-turnstile').getAttribute('data-response');
-            if (!captchaResponse) {
-                alert("Please complete the CAPTCHA!");
-                event.preventDefault();
-            }
-        });
-    </script>
+    </div>
 </body>
 </html>
