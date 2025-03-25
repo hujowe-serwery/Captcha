@@ -6,23 +6,27 @@
     <title>Cloudflare Captcha</title>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
+        /* Ensure the whole page has a light background */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #f4f4f4; /* Light background */
+            color: black; /* Ensure text is black (for any added text) */
         }
+        /* The container that holds the CAPTCHA */
         .captcha-container {
             padding: 20px;
             background-color: white; /* White background for the container */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        /* Styling for the CAPTCHA itself (border, etc.) */
         .cf-turnstile {
-            background-color: white; /* Try setting background color for the CAPTCHA box */
-            border-radius: 8px; /* Optional: make the CAPTCHA box corners rounded */
+            background-color: white; /* This may not change Cloudflare's background color directly */
+            border-radius: 8px; /* Optional: Make the CAPTCHA box rounded */
         }
     </style>
 </head>
